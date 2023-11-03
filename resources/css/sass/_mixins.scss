@@ -1,0 +1,85 @@
+@use 'sass:math';
+
+@mixin media( $condition, $size, $print: false ) {
+
+    @if $print {
+
+        @media print {
+            @content
+        };
+
+    } @else {
+
+        @media screen and ( $condition: $size ) {
+            @content
+        };
+
+    }
+
+}
+
+@mixin sprite-img( $imgNumber, $spriteVersion ){
+
+    .ui-datepicker-trigger,
+    .ui-datepicker-next:before,
+    .ui-datepicker-prev:before,
+    .select-2-standard-box .select2-search--dropdown:before,
+    .gm-ui-hover-effect:before,
+    .owl-prev span,
+    .owl-next span,
+    .sprite,
+    .sprite-b:before,
+    .sprite-a:after {
+        //background-image: url('/public/img/sprite#{$imgNumber or ''}.png?v=#{$spriteVersion}');
+        background-repeat: no-repeat;
+        @if ( $imgNumber ) {
+            //background-size: 500px auto;
+        }
+    }
+
+}
+
+@mixin placeholder( $color ){
+    &::-webkit-input-placeholder { /* WebKit browsers */
+        color: $color;
+    }
+    &:-moz-placeholder { /* WebKit browsers */
+        color: $color;
+        opacity: 1;
+    }
+    &::-moz-placeholder { /* WebKit browsers */
+        color: $color;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder { 	/* Internet Explorer 10+ */
+        color: $color;
+    }
+}
+
+@mixin transition($style, $duration, $type, $delay:0s) {
+    transition: $style $duration $type $delay;
+    -webkit-transition: $style $duration $type $delay;
+    -moz-transition: $style $duration $type $delay;
+    -o-transition: $style $duration $type $delay;
+    -ms-transition: $style $duration $type $delay;
+    -khtml-transition: $style $duration $type $delay;
+}
+
+@mixin font-size($size, $end: false, $default: $defaultFontSize) {
+
+    @if $end {
+        @for $i from $size to ($end+1) {
+            .fs#{$i}{
+                font-size: math.div( $i, $default ) + rem;
+            }
+        }
+    } @else {
+        font-size: math.div( $size, $default ) + rem;
+    }
+
+}
+
+@mixin rootFontSize( $default: $defaultFontSize ) {
+    font-size: math.div( $default, 16 ) * 100%;
+}
+

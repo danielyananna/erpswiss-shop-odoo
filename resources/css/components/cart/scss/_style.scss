@@ -1,0 +1,63 @@
+.cart {
+
+    &-elem {
+      margin-bottom: 24px;
+
+      &:first-child {
+        margin-top: 50px
+      }
+
+      &__title {
+        margin-bottom: 12px;
+      }
+
+      &__close {
+        color: $mainGray !important;
+        position: absolute;
+        font-size: 32px;
+        top: 18px;
+        right: 18px;
+      }
+
+      &__delete {
+        border-radius: 80px;
+        color: $mainRed;
+        cursor: pointer;
+      }
+
+      &__quantity-input {
+        box-sizing: border-box;
+        background-color: $mainYellow;
+        height: 20px;
+        margin-left: 10px;
+        width: 20px;
+        text-align: center;
+      }
+
+      &__img {
+        display: block;
+        margin-bottom: 16px;
+        width: 80px;
+      }
+
+      &__total-price {
+        margin-bottom: 10px;
+      }
+
+    }
+
+    &__display {
+      background: $white;
+      box-shadow: 0 10.81px 37.25px 0 rgba(52, 52, 52, 0.15);
+      padding: 20px 30px;
+      height: 100%;
+      width: 300px;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+
+  }
+
+

@@ -1,0 +1,78 @@
+.nav-bar {
+
+    &__inner {
+        box-sizing: border-box;
+        padding: 28px 0 8px 0;
+    }
+
+    &__logo {
+        width: 250px;
+        height: 46px;
+    }
+
+    &__lng-btn {
+        color: $mainDark;
+        padding-left: 33px;
+
+        &:before {
+            background-image: url('public/img/nav/eng.svg');
+            height: 16px;
+            left: 0;
+            position: absolute;
+            right: auto;
+            width: 22px;
+        }
+
+    }
+
+    &__menu-link--header-icon,
+    &__menu-link--my-wish,
+    &__menu-link--my-cart {
+        display: inline-block;
+        vertical-align: middle;
+        width: 26px;
+    }
+
+    &__menu-link {
+        &--header-icon {
+            background-image: url('public/img/nav/header-icon.svg');
+            height: 22px;
+        }
+
+        &--my-wish {
+            background-image: url('public/img/nav/my-wish.svg');
+            height: 22px;
+        }
+
+        &--my-cart {
+            background-image: url('public/img/nav/my-cart.svg');
+            height: 24px;
+        }
+    }
+
+    &__menu-item:not(:last-child) {
+        padding-right: 4px;
+    }
+
+    //for the nav-bar__container
+    &__container {
+        margin-bottom: 12px;
+
+        &-menu-link {
+            color: $mainDark;
+            line-height: 24px;
+        }
+
+        &-menu-item:not(:last-child){
+            padding-right: 25px;
+        }
+
+    }
+
+    &__cart-length {
+        right: 2px;
+        top: 4px;
+    }
+
+}
+

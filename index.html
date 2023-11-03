@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="cart-display" class="cart__display dn">
+        <!-- Cart items will be displayed here -->
+      </div>
+      <div class="wrapper">
+        <div class="center">
+        <!--for the navbar section-->
+          <nav class="nav-bar">
+            <div class="nav-bar__inner df j-spc-btwn a-center">
+              <button class="nav-bar__lng-btn fs12 pr sprite-b center-center-before">English (US)</button>
+              <img class="nav-bar__logo" src="/img/nav/ellie-pharm.svg" alt="ellie-pharm">
+              <ul class="nav-bar__menu df a-center">
+                <li class="nav-bar__menu-item">
+                  <a href="#" class="nav-bar__menu-link nav-bar__menu-link--header-icon sprite"></a>
+                </li>
+                <li class="nav-bar__menu-item">
+                  <a href="#" class="nav-bar__menu-link nav-bar__menu-link--my-wish sprite"></a>
+                </li>
+                <li class="nav-bar__menu-item pr">
+                  <button class="nav-bar__menu-link nav-bar__menu-link--my-cart sprite"></button>
+                  <span class="nav-bar__cart-length pa fs14"></span>
+                </li>
+              </ul>
+            </div>
+            <!--for the product/product search section-->
+            <div class="nav-bar__container df j-spc-btwn a-center">
+              <ul class="nav-bar__container-menu df a-center f-wrap">
+                <li class="nav-bar__container-menu-item">
+                  <a href="#" class="nav-bar__container-menu-link nav-bar__container-menu-link--active">Products</a>
+                </li>
+                <li class="nav-bar__container-menu-item">
+                  <a href="#" class="nav-bar__container-menu-link">Brands</a>
+                </li>
+                <li class="nav-bar__container-menu-item">
+                  <a href="#" class="nav-bar__container-menu-link">Manufacturers</a>
+                </li>
+                <li class="nav-bar__container-menu-item">
+                  <a href="#" class="nav-bar__container-menu-link">B2B Channel</a>
+                </li>
+              </ul>
+              <form action="#" class="form">
+                <div class="form__search-box pr">
+                  <input type="text" class="form__input" placeholder="Search...">
+                  <button class="form__search-btn pa sprite-a"></button>
+                </div>
+              </form>
+            </div>
+          </nav>
+          <!--for the sale section-->
+          <main class="sale">
+            <ul class="sale__menu df">
+              <li class="sale__menu-item">
+                <a href=""  class="sale__menu-link fs14">Home</a>
+              </li>
+              <li class="sale__menu-item sale__menu-item--shop pr sprite-b">
+                <span class="sale__menu-link sale__menu-link--active fs14">Shop</span>
+              </li>
+            </ul>
+          </main>
+          <div class="sale__box ts">
+            <h1 class="sale__title fs28 font-small">All products</h1>
+          </div>
+          <!--< for the shop-page-sort -->
+          <div class="shop-sort df j-spc-btwn">
+            <div class="shop-sort__left">
+              <span class="shop-sort__num dib fs18">Product</span>
+              <span class="shop-sort__desc fib fs18">Results</span>
+            </div>
+              <div class="shop-sort__custom-select">
+                <div id="selectedOption" class="shop-sort__selected-option fs14 pr sprite-a">Sort By</div>
+                <ul id="sortOptions" class="shop-sort__options dn pa">
+                  <li data-value="high" class="shop-sort__options-item shop-sort__options-item--high fs18 pr sprite-b">High to Low</li>
+                  <li data-value="low" class="shop-sort__options-item shop-sort__options-item--low fs18 pr sprite-b">Low to High</li>
+                  <li data-value="a" class="shop-sort__options-item shop-sort__options-item--a fs18 pr sprite-b">A to Z</li>
+                  <li data-value="z" class="shop-sort__options-item shop-sort__options-item--z fs18 pr sprite-b">Z to A</li>
+                </ul>
+              </div>
+            </div>
+          <!--  for the sort and products section-->
+          <div class="shop-filter df j-spc-btwn">
+            <div class="shop-filter__left columns">
+              <div class="nav">
+				<span class="db">
+                  Filter :
+                  <button class="btn-active" cs-filter="*">All</button>
+<!--                  <button cs-filter="biesta">B-esta</button>-->
+<!--                  <button cs-filter="ammi">Ammi</button>-->
+<!--                  <button cs-filter="bb">BB Glow</button>-->
+<!--                  <button cs-filter="beads">Beads Max</button>-->
+<!--                  <button cs-filter="bellast">Bellast</button>-->
+                </span>
+                <div class="shop-filter__price df">
+                  <label class="shop-filter__price-label dib" for="priceFilter">Price Range:</label>
+                  <input class="shop-filter__input-price" type="range" id="priceFilter" min="30" max="200" step="5">
+                  <span id="priceValue" class="shop-filter__price-range">$30 - $100</span>
+                </div>
+
+              </div>
+            </div>
+            <div class="shop-filter__right columns">
+              <side class="ul">
+                <div  class="shop-filter__box items" cs-category="ammi">
+                  <div class="shop-filter__box-inner df">
+                    <div class="shop-filter__img">
+                      <img class="shop-filter__img-item" src="/public/img/products/ammi/ammi.svg" alt="ammi">
+                    </div>
+                    <div class="shop-filter__par">
+                      <h2 class="shop-filter__title fs28 font-small">Ammi</h2>
+                      <p class="shop-filter__desc fs18">
+                        Ammi is a brand of fillers based on hyaluronic acid created by Beautiful Korea Co.,
+                        Ltd. The series represented by four products including Ammi Aqua, Ammi Crystal,  Ammi
+                        Hydro, and Ammi Diamond. Ammi fillers are manufactured using unique patented technology
+                        Nano-Mesh Cross-Linking, demonstrate high efficiency if applied for correction of
+                        age-related skin changes and restoration of loss volumes on face, and represent the
+                        biocompatible and safe cosmetological items.
+                      </p>
+                    </div>
+                  </div>
+                  <ul class="shop-filter__items df f-wrap">
+                    <li class="shop-filter__item items" cs-category="ammi">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/ammi/ammi-hydro.webp" height="100" alt="ammi-hydro" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Ammi Hydro</span>
+                        <span class="shop-filter__product-size fs14 db">1x1.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$35.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="ammi">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/ammi/ammi-dimond.webp" height="100" alt="ammi-dimond" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Ammi Dimond</span>
+                        <span class="shop-filter__product-size fs14 db">1x1.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$35.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="ammi">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/ammi/ammi-crystal.webp" height="100" alt="ammi-crystal" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Ammi Crystal</span>
+                        <span class="shop-filter__product-size fs14 db">1x1.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$35.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="ammi">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/ammi/ammi-aqua.webp" height="100" alt="ammi-aqua" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Ammi Aqua</span>
+                        <span class="shop-filter__product-size fs14 db">1x1.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$35.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div  class="shop-filter__box items" cs-category="biesta">
+                  <div class="shop-filter__box-inner df">
+                    <div class="shop-filter__img">
+                      <img class="shop-filter__img-item" src="/public/img/products/biesta/biesta.svg" alt="biesta">
+                    </div>
+                    <div class="shop-filter__par">
+                      <h2 class="shop-filter__title fs28 font-small">B-esta</h2>
+                      <p class="shop-filter__desc fs18">
+                        B-esta is a brand of body fillers based on hyaluronic acid by BNC Global Co. The series is
+                        represented by two products B-esta 10 Body Filler and B-esta 50 Body Filler. Subcutaneous
+                        injection of the fillers promotes volumerization of the desired areas. Since the products have
+                        an optimal viscosity, it enables the specialist to easily re-shape the selected area, providing
+                        the most natural looking silhouette. The effect of fillers lasts up to two years, and the
+                        results of injections become visible immediately after treatment.
+                      </p>
+                    </div>
+                  </div>
+                  <ul class="shop-filter__items df f-wrap">
+                    <li class="shop-filter__item items" cs-category="biesta">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/biesta/biesta-filler.webp" height="100" alt="ammi-hydro" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">B-esta Body Filler 50 ml</span>
+                        <span class="shop-filter__product-size fs14 db">1x50ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$195.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="biesta">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/biesta/biesta-body.webp" height="100" alt="ammi-dimond" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">B-esta 10 ml Body Filler</span>
+                        <span class="shop-filter__product-size fs14 db">1x10ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$100.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div  class="shop-filter__box items" cs-category="bb">
+                  <div class="shop-filter__box-inner df">
+                    <div class="shop-filter__img">
+                      <img class="shop-filter__img-item" src="/public/img/products/bb/bb.svg" alt="bb">
+                    </div>
+                    <div class="shop-filter__par">
+                      <h2 class="shop-filter__title fs28 font-small">BB GLow</h2>
+                    </div>
+                  </div>
+                  <ul class="shop-filter__items df f-wrap">
+                    <li class="shop-filter__item items" cs-category="bb">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/bb/bb-kit.webp" height="100" alt="bb-kit" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">BB Glow Starter Kitl</span>
+                        <span class="shop-filter__product-size fs14 db">10x5.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$110.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="bb">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/bb/bb-glow-25.webp" height="100" alt="bb-glow-25" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">BB Glow #25</span>
+                        <span class="shop-filter__product-size fs14 db">1x7.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$110.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="bb">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/bb/bb-glow-23.webp" height="100" alt="bb-glow-23" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">BB Glow #23</span>
+                        <span class="shop-filter__product-size fs14 db">1x7.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$110.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="bb">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/bb/bb-glow-21.webp" height="100" alt="bb-glow-21" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">BB Glow #21</span>
+                        <span class="shop-filter__product-size fs14 db">1x7.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$100.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div  class="shop-filter__box items" cs-category="beads">
+                  <div class="shop-filter__box-inner df">
+                    <div class="shop-filter__img">
+                      <img class="shop-filter__img-item" src="/public/img/products/beads/beads.svg" alt="bb">
+                    </div>
+                    <div class="shop-filter__par">
+                      <h2 class="shop-filter__title fs28 font-small">Beads Max</h2>
+                      <p class="shop-filter__desc fs18">
+                        Beads Max is a brand of fillers developed on hyaluronic acid (HA) by Maxcore Global Co., Ltd. This series
+                        contains five products: Beads Max Fine, Beads Max Mid, Beads Max High, Beads Max Body Classic-H, and Beads Max
+                        Body Classic-S, differentiated by the degree of HA polymerization, and suitable for resolution of certain
+                        issues. Using these fillers, the one can correct the wrinkles with different degree of manifestation, remodel
+                        the face and body shape as well as restore the loss volumes.
+                      </p>
+                    </div>
+                  </div>
+                  <ul class="shop-filter__items df f-wrap">
+                    <li class="shop-filter__item items" cs-category="beads">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/beads/beads-mid.webp" height="100" alt="beads-mid" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Beads Max Mid</span>
+                        <span class="shop-filter__product-size fs14 db">10x10.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$33.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="beads">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/beads/beads-max.webp" height="100" alt="beads-max" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Beads Max High</span>
+                        <span class="shop-filter__product-size fs14 db">10x10.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$33.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="beads">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/beads/beads-fine.webp" height="100" alt="beads-fine" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Beads Max Fine</span>
+                        <span class="shop-filter__product-size fs14 db">10x10.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$33.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="beads">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/beads/beads-classic.webp" height="100" alt="beads-classic" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Beads Max Classic H</span>
+                        <span class="shop-filter__product-size fs14 db">1x10.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$92.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="beads">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/beads/beads-classic-s.webp" height="100" alt="beads-classic-s" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Beads Max Body Classic-S</span>
+                        <span class="shop-filter__product-size fs14 db">1x10.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$92.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div  class="shop-filter__box items" cs-category="bellast">
+                  <div class="shop-filter__box-inner df">
+                    <div class="shop-filter__img">
+                      <img class="shop-filter__img-item" src="/public/img/products/bellast/bellast.svg" alt="bellast">
+                    </div>
+                    <div class="shop-filter__par">
+                      <h2 class="shop-filter__title fs28 font-small">Bellast</h2>
+                      <p class="shop-filter__desc fs18">
+                        Bellast is a series of fillers established by Dongkook Pharma Co., Ltd. For the first time, the company
+                        applied the double polymerization technology for the manufacturing of the brand products. As a result, they
+                        obtained three fillers: Bellast Soft L, Bellast Ultra L, and Bellast Ultra Plus. Using them, it is possible to
+                        correct wrinkles with moderate and high degree of manifestation as well as deep folds on the forehead and in
+                        glabella area, significantly diminish the nasolabial folds, remodel the face shape and conduct lips
+                        augmentation.
+                      </p>
+                    </div>
+                  </div>
+                  <ul class="shop-filter__items df f-wrap">
+                    <li class="shop-filter__item items" cs-category="bellast">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/bellast/bellast-soft.webp" height="100" alt="bellast-soft" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Bellast Soft L</span>
+                        <span class="shop-filter__product-size fs14 db">1x1.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$32.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="bellast">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/bellast/bellas-plus.webp" height="100" alt="bellas-plus" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Bellast Plus</span>
+                        <span class="shop-filter__product-size fs14 db">1x1.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$32.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="shop-filter__item items" cs-category="bellast">
+                      <div class="items-img-holder">
+                        <img src="/public/img/products/bellast/bellast-l.webp" height="100" alt="bellast-l" />
+                      </div>
+                      <div class="shop-filter__product">
+                        <span class="shop-filter__product-name product-name font-small dib">Bellast L</span>
+                        <span class="shop-filter__product-size fs14 db">1x1.0ml</span>
+                        <div class="shop-filter__product-box df a-center font-small pr">
+                          <span class="shop-filter__product-price product-price dib">$32.00</span>
+                          <div class="shop-filter__add pa">
+                            <button class="shop-filter__add-card pr sprite"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </side>
+            </div>
+          </div>
+          <!--end of the sort section-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

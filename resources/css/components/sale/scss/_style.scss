@@ -1,0 +1,27 @@
+.sale {
+
+  &__menu {
+    box-sizing: border-box;
+    padding: 15px 0;
+  }
+
+  &__box {
+    margin-bottom: 32px;
+  }
+
+  &__menu-link {
+    color: $secondaryDark;
+  }
+
+  &__menu-item--shop:before {
+    color: $lightDark;
+    content: '/';
+    display: inline-block;
+    padding: 0 8px;
+  }
+
+  &__title {
+    line-height: 42px;
+  }
+
+}

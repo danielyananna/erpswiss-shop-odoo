@@ -1,0 +1,16 @@
+.btn {
+    border: none;
+    border-radius: 80px;
+    color: $mainDark;
+    cursor: pointer;
+    height: 44px;
+    line-height: 22px;
+    padding: 0 24px;
+    text-align: center;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    font-family: 'Mardoto-medium', 'Helvetica', 'Arial', 'sans-serif';
+
+}
